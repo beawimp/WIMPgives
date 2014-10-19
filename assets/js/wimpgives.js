@@ -36,9 +36,14 @@
 
 	// Run equal heights on main body content if it is shorter than the sidebar
 	$( window ).load( function() {
-		var $body = $( document.getElementById( 'body-wrap' ) ), $sidebar = $( document.getElementById( 'sidebar' ) ), navHeight = $body.children( 'nav' ).height(), bodyHeight = $body.height(), sidebarHeight = $sidebar.height();
+		var $body = $( document.getElementById( 'body-wrap' ) ),
+			$sidebar = $( document.getElementById( 'sidebar' ) ),
+			navHeight = $body.children( 'nav' ).height(),
+			bodyHeight = $body.height(),
+			sidebarHeight = $sidebar.height();
+
 		if ( bodyHeight < sidebarHeight && false === $( 'body' ).hasClass( 'is-mobile' ) ) {
-			$( document.getElementById( 'body-content' ) ).css( 'height', sidebarHeight - navHeight );
+			$( document.getElementById( 'content-wrapper' ) ).css( 'height', sidebarHeight - navHeight );
 		}
 	} );
 })( this, jQuery );
