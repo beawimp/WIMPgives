@@ -13,7 +13,11 @@
  */
 
 // Useful global constants
-define( 'WG2014_VERSION', '0.1.0' );
+define( 'WG2014_VERSION', '0.1.0'                   );
+define( 'WG2014_URL', get_template_directory_uri()  );
+define( 'WG2014_PATH', dirname( __FILE__ ) . '/'    );
+define( 'WG2014_ASSETS', WG2014_URL . 'assets/'     );
+define( 'WG2014_INCLUDES', WG2014_PATH . 'includes' );
 
 include_once( 'includes/theme-helpers.php' );
 /**
@@ -31,7 +35,7 @@ function wg2014_setup() {
 	 * If you're building a theme based on WIMPgives 2014, use a find and replace
 	 * to change 'wg2014' to the name of your theme in all template files.
 	 */
-	load_theme_textdomain( 'wg2014', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wg2014', WG2014_PATH . '/languages' );
 
 	/**
 	 * Register our WP Menus
@@ -59,12 +63,12 @@ add_action( 'after_setup_theme', 'wg2014_setup' );
 function wg2014_scripts_styles() {
 	$postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_style( 'wg2014', get_template_directory_uri() . "/assets/css/wimpgives{$postfix}.css", array(), WG2014_VERSION );
+	wp_enqueue_style( 'wg2014', WG2014_URL . "/assets/css/wimpgives{$postfix}.css", array(), WG2014_VERSION );
 
-	wp_enqueue_script( 'fw-modernizer', get_bloginfo( 'template_url' ) . '/assets/js/vendor/modernizr-2.5.3.custom.min.js', null, '2.0.6', false );
-	wp_enqueue_script( 'superfish', get_bloginfo( 'template_url' ) . '/assets/js/vendor/jquery.superfish.1.4.8.min.js', array( 'jquery' ), '1.4.8', true );
-	wp_enqueue_script( 'supersubs', get_bloginfo( 'template_url' ) . '/assets/js/vendor/jquery.supersubs.0.2b.min.js', array( 'superfish' ), '0.2b', true );
-	wp_enqueue_script( 'wg2014', get_template_directory_uri() . "/assets/js/wimpgives{$postfix}.js", array( 'supersubs' ), WG2014_VERSION, true );
+	wp_enqueue_script( 'fw-modernizer', WG2014_URL . '/assets/js/vendor/modernizr-2.5.3.custom.min.js', null, '2.0.6', false );
+	wp_enqueue_script( 'superfish', WG2014_URL . '/assets/js/vendor/jquery.superfish.1.4.8.min.js', array( 'jquery' ), '1.4.8', true );
+	wp_enqueue_script( 'supersubs', WG2014_URL . '/assets/js/vendor/jquery.supersubs.0.2b.min.js', array( 'superfish' ), '0.2b', true );
+	wp_enqueue_script( 'wg2014', WG2014_URL . "/assets/js/wimpgives{$postfix}.js", array( 'supersubs' ), WG2014_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'wg2014_scripts_styles' );
 
@@ -88,7 +92,7 @@ add_action( 'widgets_init', 'wimpgives_widgets_init' );
  * Add humans.txt to the <head> element.
  */
 function wg2014_header_meta() {
-	$humans = '<link type="text/plain" rel="author" href="' . get_template_directory_uri() . '/humans.txt" />';
+	$humans = '<link type="text/plain" rel="author" href="' . WG2014_URL . '/humans.txt" />';
 
 	echo apply_filters( 'wg2014_humans', $humans );
 }
