@@ -22,7 +22,7 @@
 
 	<header class="group">
 		<div id="logo" class="image-logo">
-			<h2 class="ir"><a href="<?php esc_url( home_url( '/' ) ); ?>"><?php esc_html( bloginfo( 'name' ) ); ?></a></h2>
+			<h2 class="ir"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html( bloginfo( 'name' ) ); ?></a></h2>
 		</div>
 
 		<div id="date-header">
