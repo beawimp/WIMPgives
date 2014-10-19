@@ -48,10 +48,14 @@ header {
 	height:     119px;
 }
 #date-header {
-	position: relative;
-	top:      120px;
-	right:    23.1%;
-	float:    right;
+	clear:left;
+	margin-bottom:-17px;
+	display:block;
+	text-align:center;
+	width:76.9%;
+	p {
+		margin:0;
+	}
 }
 #social-media {
 	float: right;

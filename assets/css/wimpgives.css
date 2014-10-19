@@ -778,10 +778,13 @@ header {
   height: 119px; }
 
 #date-header {
-  position: relative;
-  top: 120px;
-  right: 23.1%;
-  float: right; }
+  clear: left;
+  margin-bottom: -17px;
+  display: block;
+  text-align: center;
+  width: 76.9%; }
+  #date-header p {
+    margin: 0; }
 
 #social-media {
   float: right; }
@@ -982,12 +985,6 @@ figure {
 
   h2, h3 {
     page-break-after: avoid; } }
-@media screen and (max-width: 974px) {
-  #social-media {
-    display: none; }
-
-  #date-header {
-    top: 37px; } }
 @media screen and (max-width: 693px) {
   #logo {
     width: 100%; }
@@ -997,13 +994,8 @@ figure {
       height: 101px;
       margin: 0 auto; }
 
-  #social-media {
-    display: none; }
-
   #date-header {
-    float: none;
-    right: auto;
-    text-align: center; }
+    width: 100%; }
 
   #body-wrap, #sidebar, footer, .two-column {
     float: none;
