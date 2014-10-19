@@ -179,43 +179,29 @@ function shorten_with_ellipsis( $inputstring, $characters ) {
 add_filter( 'previous_post_link', 'wimpgives_shorten_linktext' );
 add_filter( 'next_post_link', 'wimpgives_shorten_linktext' );
 
-
-/*****
- * Description: Set our Shortcodes below
- * Since: 0.1
- * Author: Cole Geissinger
- * /*****/
-function wimpcamp_two_column( $atts, $content = null ) {
+/**
+ * Generates a two column layout
+ * @param array $atts null
+ * @param string $content The content
+ *
+ * @return string
+ */
+function wimpgives_two_column( $atts, $content = '' ) {
 	return '<div class="two-column">' . do_shortcode( $content ) . '</div>';
 }
+add_shortcode( 'two-column', 'wimpgives_two_column' );
 
-add_shortcode( 'two-column', 'wimpcamp_two_column' );
-
-function wimpcamp_clear() {
+function wimpgives_clear() {
 	return '<div class="clear"></div>';
 }
-
-add_shortcode( 'clear', 'wimpcamp_clear' );
-
-function wimpcamp_eventbrite_widget() {
-	return '<div style="width:100%; text-align:left;" ><iframe  src="https://www.eventbrite.com/tickets-external?eid=4321012264&ref=etckt" frameborder="0" height="306" width="100%" vspace="0" hspace="0" marginheight="5" marginwidth="5" scrolling="auto" allowtransparency="true"></iframe><div style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:100%; text-align:left;" ><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/etckt">Event management</a><span style="color:#ddd;"> for </span><a style="color:#ddd; text-decoration:none;" target="_blank" href="http://http://wimpcamp2012.eventbrite.com?ref=etckt">WIMPcamp 2012</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=etckt">Eventbrite</a></div></div>';
-}
-
-add_shortcode( 'eventbrite-widget', 'wimpcamp_eventbrite_widget' );
-
-function wimpcamp_facebook_widget() {
-	return '<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FWebInteractiveMediaProfessionals&amp;width=328&amp;height=558&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=false&amp;appId=126246364174319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:328px; height:558px;" allowTransparency="true"></iframe>';
-}
-
-add_shortcode( 'facebook-likebox', 'wimpcamp_facebook_widget' );
-
+add_shortcode( 'clear', 'wimpgives_clear' );
 
 /*****
  * Description: Stop the wpautop wptexturize filters from parsing our shortcodes and then reactivate them after
  * Since: 0.1
  * Author: Cole Geissinger
  * /*****/
-function wimpcamp_formatter( $content ) {
+function wimpgives_formatter( $content ) {
 	$new_content = '';
 
 	//matches the contents and the open and closing tags
@@ -244,15 +230,15 @@ function wimpcamp_formatter( $content ) {
 	return $new_content;
 }
 
-// Remove the 2 main auto-formatters
+// Remove the 2 main auto-formatter
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_content', 'wptexturize' );
 
 // Before displaying for viewing, apply this function
-add_filter( 'the_content', 'wimpcamp_formatter', 99 );
-add_filter( 'widget_text', 'wimpcamp_formatter', 99 );
+add_filter( 'the_content', 'wimpgives_formatter', 99 );
+add_filter( 'widget_text', 'wimpgives_formatter', 99 );
 
 
-//fix the backtrack_limit bug - if too many shortcodes are used, the content disappears.
-//long posts should require a higher limit, see http://core.trac.wordpress.org/ticket/8553
+// Fix the backtrack_limit bug - if too many shortcodes are used, the content disappears.
+// Long posts should require a higher limit, see http://core.trac.wordpress.org/ticket/8553
 @ini_set( 'pcre.backtrack_limit', 500000 );

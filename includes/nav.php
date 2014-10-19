@@ -13,4 +13,4 @@
 		<?php previous_post_link( '<div class="alignleft">&laquo; %link</div>', '%title' ); ?>
 	</div>
 
-<?php endif; ?>
+<?php endif;

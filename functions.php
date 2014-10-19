@@ -19,7 +19,11 @@ define( 'WG2014_PATH', dirname( __FILE__ ) . '/'    );
 define( 'WG2014_ASSETS', WG2014_URL . 'assets/'     );
 define( 'WG2014_INCLUDES', WG2014_PATH . 'includes' );
 
+/**
+ * Load all of our theme goodness
+ */
 include_once( 'includes/theme-helpers.php' );
+
 /**
  * Set up theme defaults and register supported WordPress features.
  *
