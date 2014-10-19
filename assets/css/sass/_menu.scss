@@ -1,0 +1,163 @@
+nav {
+	background: #0e62a2;
+	font-size: 1.1em;
+	border-radius: 5px 5px 0 0;
+	a {
+		&:link, &:visited {
+			color: #f0f5f9;
+			text-decoration: none;
+		}
+		&:hover, &:active {
+			color: #bdcfdd;
+			text-decoration: none;
+			-moz-transition: all .5;
+			-webkit-transition: all .5s;
+			-o-transition: all .5s;
+			transition: all .5s;
+		}
+	}
+}
+
+.menu li.current-menu-item a {
+	color: #bdcfdd;
+	text-decoration: none;
+	-moz-transition: all .5;
+	-webkit-transition: all .5s;
+	-o-transition: all .5s;
+	transition: all .5s;
+}
+
+nav span.current-link {
+	background: transparent url('../../images/current-link.png') 0 0 no-repeat;
+	display: block;
+	position: absolute;
+	bottom: -10px;
+	width: 21px;
+	height: 10px;
+	left: 35%;
+}
+
+// ESSENTIAL STYLES
+.menu {
+	margin: 0;
+	list-style: none;
+	* {
+		margin: 0;
+		list-style: none;
+	}
+	line-height: 1.0;
+	display: table;
+	margin: 0 auto !important;
+	ul {
+		background: #0e62a2;
+		position: absolute;
+		top: -999em;
+		border-radius: 0 0 5px 5px;
+		width: 10em;
+		// left offset of submenus need to match (see below)
+		li {
+			width: 100%;
+		}
+	}
+	li {
+		&:hover {
+			visibility: inherit; // fixes IE7 'sticky bug'
+		}
+		float: left;
+		position: relative;
+	}
+	a {
+		display: block;
+		position: relative;
+		padding: 8px 20px 5px;
+		cursor: pointer;
+	}
+	ul a {
+		padding: 8px 18px;
+		font-size: 0.9em;
+	}
+	li {
+		&:hover ul, &.sfHover ul {
+			left: 0;
+			top: 28px;  // match top ul list item height
+			z-index: 99;
+		}
+	}
+}
+
+ul.menu li {
+	&:hover li ul, &.sfHover li ul {
+		top: -999em;
+	}
+	li {
+		&:hover ul, &.sfHover ul {
+			left: 10em;  // match ul width
+			top: 0;
+		}
+		&:hover li ul, &.sfHover li ul {
+			top: -999em;
+		}
+		li {
+			&:hover ul, &.sfHover ul {
+				left: 10em;  // match ul width */
+				top: 0;
+			}
+		}
+	}
+}
+
+// arrows
+
+.menu a.sf-with-ul {
+	padding-right: 2.25em;
+	min-width: 1px;  // trigger IE7 hasLayout so spans position accurately
+}
+
+.sf-sub-indicator {
+	position: absolute;
+	display: block;
+	right: .75em;
+	top: 1.05em;  // IE6 only
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	overflow: hidden;
+	background: url('../images/arrows-ffffff.png') no-repeat -10px -100px;
+	// 8-bit indexed alpha png. IE6 gets solid image only
+}
+
+a {
+	> .sf-sub-indicator { // give all except IE6 the correct values
+		top: .8em;
+		background-position: 0 -100px;  // use translucent arrow for modern browsers
+	}
+	&:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator {
+		background-position: -10px -100px;  // arrow hovers for modern browsers
+	}
+}
+
+// apply hovers to modern browsers
+li {
+	&:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator {
+		background-position: -10px -100px;
+	}
+}
+
+.menu ul {
+	.sf-sub-indicator {
+		background-position: -10px 0;
+	}
+	a {
+		> .sf-sub-indicator {
+			background-position: 0 0;
+		}
+		&:focus > .sf-sub-indicator, &:hover > .sf-sub-indicator, &:active > .sf-sub-indicator {
+			background-position: -10px 0;
+		}
+	}
+	li {
+		&:hover > a > .sf-sub-indicator, &.sfHover > a > .sf-sub-indicator {
+			background-position: -10px 0;
+		}
+	}
+}

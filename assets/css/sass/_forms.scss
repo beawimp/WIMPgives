@@ -1,0 +1,377 @@
+form {
+	margin: 0;
+}
+label {
+	font-weight: bold;
+	cursor: pointer;
+}
+fieldset {
+	padding: 1em;
+	margin: 0 0 1.5em;
+	border: 1px solid #ccc;
+}
+legend {
+	font-weight: bold;
+	font-size: 1.2em;
+	border: 0;
+	margin-left: -7px;
+	padding: 0;
+}
+input {
+	&.text {
+		width: 300px;
+		padding: 5px;
+	}
+	&.title {
+		width: 300px;
+		padding: 5px;
+		font-size: 1.5em;
+	}
+}
+textarea {
+	width: 100%;
+	height: 90px;
+	padding: 5px;
+}
+input {
+	&[type=checkbox], &[type=radio], &.checkbox, &.radio {
+		position: relative;
+		top: .25em;
+	}
+}
+form.inline {
+	line-height: 3;
+	p {
+		margin-bottom: 0;
+	}
+}
+
+button, input, select, textarea {
+	margin: 0;
+	vertical-align: baseline;
+	vertical-align: middle;
+	font-size: 0.9em !important;
+}
+
+button, input {
+	line-height: normal;
+	overflow: visible;
+}
+
+table {
+	button, input {
+		overflow: auto;
+	}
+}
+
+button {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+input {
+	&[type=button], &[type=reset], &[type=submit] {
+		cursor: pointer;
+		-webkit-appearance: button;
+	}
+	&[type=checkbox], &[type=radio] {
+		box-sizing: border-box;
+	}
+	&[type=search] {
+		-webkit-appearance: textfield;
+		-moz-box-sizing: content-box;
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
+		&::-webkit-search-decoration {
+			-webkit-appearance: none;
+		}
+	}
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+input:valid!, textarea:valid! {}
+
+input:invalid, textarea:invalid {
+	background-color: #f0dddd;
+}
+
+input {
+	&[type=text], &[type=password], &[type=email], &[type=tel], &.text, &.title {
+		background: #fff;
+		box-shadow: inset 2px 2px 5px rgba(7, 8, 8, 0.3);
+		border-radius: 5px;
+		padding: 5px !important;
+		border: 1px solid rgba(7, 8, 8, 0.1);
+	}
+}
+
+textarea, select {
+	background: #fff;
+	box-shadow: inset 2px 2px 5px rgba(7, 8, 8, 0.3);
+	border-radius: 5px;
+	padding: 5px !important;
+	border: 1px solid rgba(7, 8, 8, 0.1);
+}
+
+input {
+	&[type=text], &[type=password], &[type=email], &[type=tel], &.text, &.title {
+		margin: .5em 0;
+	}
+}
+
+textarea, select {
+	margin: .5em 0;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input:-moz-placeholder, textarea:-moz-placeholder {
+	font-family: sans-serif;
+	letter-spacing: .01em;
+	color: #6e6e6e;
+}
+
+// Gravity Forms
+
+.gform_wrapper input {
+	&[type="text"], &[type="url"], &[type="email"], &[type="tel"], &[type="number"], &[type="password"] {
+		padding: 5px;
+	}
+}
+
+input {
+	&[type="text"], &[type="password"], &[type="email"], &[type="tel"], &.text, &.title {
+		margin: 0;
+	}
+}
+
+textarea, select {
+	margin: 0;
+}
+
+img.ui-datepicker-trigger {
+	vertical-align: middle;
+}
+
+.ui-datepicker-div, #ui-datepicker-div {
+	width: 273px !important;
+}
+
+.gform_wrapper {
+	.left_label .gfield_label {
+		margin-bottom: 15px;
+	}
+	&.gf_browser_chrome {
+		.gfield_checkbox li input[type="checkbox"], .gfield_radio li input[type="radio"], .gfield_checkbox li input {
+			margin-left: 1px;
+		}
+	}
+}
+
+// Sidebar
+#sidebar {
+	.gform_wrapper {
+		.right_label {
+			input.large, select.large {
+				width: 91%;
+				margin-bottom: .5em;
+			}
+		}
+		.left_label {
+			input.large, select.large {
+				width: 91%;
+				margin-bottom: .5em;
+			}
+		}
+		textarea.textarea {
+			width: 91%;
+			margin-bottom: .5em;
+		}
+		.gform_footer {
+			&.right_label, &.left_label {
+				margin: 0;
+				padding: 0;
+			}
+		}
+		ul.right_label li, form ul.right_label li, ul.left_label li, form ul.left_label li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	#gform_submit_button_1 {
+		float: right;
+		margin-right: 20px;
+	}
+	.gform_wrapper .left_label .gfield_label {
+		display: none;
+	}
+}
+
+// Contact Form
+#contact-form {
+	form {
+		font-size: 0.9em;
+	}
+	input {
+		&[type=text], &[type=email], &[type=tel] {
+			width: 100%;
+			margin: 5px 0;
+		}
+	}
+	textarea {
+		width: 100%;
+		margin: 5px 0;
+	}
+	input {
+		&[type="checkbox"], &[type="radio"], &.checkbox, &.radio {
+			top: -2px;
+		}
+		&[type=submit] {
+			width: auto;
+		}
+	}
+	li {
+		&.state-field {
+			float: left;
+			width: 44px;
+		}
+		&.phone-field {
+			float: left;
+			margin-left: 10px;
+			width: 81.6%;
+		}
+	}
+	.inputError {
+		border: 1px solid #f00;
+	}
+}
+
+// Comments and other WordPress Form Styles
+#searchform!, .form! {}
+#s, .s {
+	border: 1px solid #282425;
+	box-shadow: inset 0 0 5px #d5d5d5;
+	box-shadow: inset 0 0 5px rgba(3, 4, 4, 0.59);
+}
+
+#searchsubmit, .searchsubmit {
+	background: #282425;
+	color: #fff;
+	border: none;
+	padding: 7px 6px 6px;
+}
+
+#comments-list, #respond {
+	margin-left: 10px;
+	background: transparent;
+	padding: 10px;
+}
+
+.commentlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	li {
+		&.alt!, &.bypostauthor!, &.byuser!, &.comment-author-admin! {}
+		.comment {
+			width: 85%;
+		}
+		.comment-meta {
+			margin-bottom: 5px;
+		}
+		&.comment {
+			border-bottom: 1px dotted #666;
+			padding: 10px;
+			.gravatar {
+				width: 10%;
+			}
+			div {
+				&.commentmetadata! {}
+				&.comment-meta {
+					font-size: 10px;
+					a {
+						color: #ccc;
+					}
+				}
+			}
+			p! {}
+			ul {
+				list-style: none;
+			}
+			div.reply {
+				font-size: 11px;
+				text-align: right;
+				a {
+					font-weight: bold;
+				}
+			}
+		}
+	}
+	ul.children {
+		list-style: none;
+		margin: 10px 0 0;
+		li {
+			&.alt!, &.bypostauthor!, &.byuser!, &.comment!, &.comment-author-admin! {}
+			&.depth-2 {
+				border-left: 5px solid #555;
+				margin: 0 0 10px 10px;
+			}
+			&.depth-3 {
+				border-left: 5px solid #999;
+				margin: 0 0 10px 10px;
+			}
+			&.depth-4 {
+				border-left: 5px solid #bbb;
+				margin: 0 0 10px 10px;
+			}
+			&.depth-5!, &.odd! {}
+		}
+	}
+	li {
+		&.even {
+			background: #fff;
+		}
+		&.odd {
+			background: #EBEBEB;
+		}
+		&.parent {
+			border-left: 5px solid #111;
+		}
+		&.thread-alt!, &.thread-even!, &.thread-odd! {}
+	}
+	h2 {
+		margin: 0;
+		padding: 10px 0 0;
+	}
+}
+
+#respond {
+	h2 {
+		margin: 0;
+		padding: 10px 0 0;
+	}
+	label {
+		display: none;
+	}
+	input, textarea {
+		width: 98%;
+		padding: 10px 5px;
+		font-size: .8em;
+	}
+	input {
+		&[type=text]! {}
+		&[type=submit] {
+			width: auto;
+			margin: 10px 0;
+			text-align: right;
+		}
+	}
+}

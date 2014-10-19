@@ -1,0 +1,41 @@
+@media screen and (max-width: 974px) {
+	#social-media {
+		display: none;
+	}
+	#date-header {
+		top: 37px;
+	}
+}
+
+@media screen and (max-width: 693px) {
+	#logo {
+		width: 100%;
+		a {
+			background: transparent url('../../images/gives-logo-mobile.png') 0 0 no-repeat;
+			width: 340px;
+			height: 101px;
+			margin: 0 auto;
+		}
+	}
+	#social-media {
+		display: none;
+	}
+	#date-header {
+		float: none;
+		right: auto;
+		text-align: center;
+	}
+	#body-wrap, #sidebar, footer, .two-column {
+		float: none;
+		width: 100%;
+	}
+	#sidebar {
+		text-align: center;
+		.textwidget h3 {
+			text-align: center;
+		}
+	}
+	footer {
+		margin-top: 10px;
+	}
+}

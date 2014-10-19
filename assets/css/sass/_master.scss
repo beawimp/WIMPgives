@@ -1,0 +1,277 @@
+body {
+	background: #f0f5f9 url('../../images/background.jpg') 0 0 repeat-x;
+}
+* {
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
+}
+
+// HTML5 Display Definitions
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+audio, canvas, video {
+	display: inline-block;
+	display: inline;
+	zoom:    1;
+}
+audio:not([controls]) {
+	display: none;
+}
+[hidden] {
+	display: none;
+}
+hr {
+	margin: 0;
+	height: 0;
+}
+
+// Structure Styles
+#wrapper {
+	max-width: 1000px;
+	width:     95%;
+	margin:    20px auto;
+}
+
+// Header
+header {
+	margin-bottom: 20px;
+}
+#logo, #date-header, #social-media {
+	float: left;
+}
+#logo a {
+	background: transparent url('../../images/gives-logo.png') 0 0 no-repeat;
+	display:    block;
+	width:      402px;
+	height:     119px;
+}
+#date-header {
+	position: relative;
+	top:      120px;
+	right:    23.1%;
+	float:    right;
+}
+#social-media {
+	float: right;
+	li {
+		margin-right: 5px;
+		&.last {
+			margin-right: 0;
+		}
+	}
+	a {
+		display:    block;
+		background: transparent url('../../images/social-media-btns.png') 0 0 no-repeat;
+		width:      30px;
+		height:     30px;
+		&.facebook {
+			background-position: -35px 0;
+		}
+		&.rss {
+			background-position: -70px 0;
+		}
+	}
+}
+
+// Content Wrappers
+#body-wrap {
+	float:         left;
+	width:         76.9%;
+	margin-right:  1.8%;
+	box-shadow:    1px 1px 6px rgba(7, 8, 8, .22);
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+// Main Content
+#content-wrapper {
+	background:    #fff;
+	border-radius: 5px;
+}
+#body-content {
+	padding: 20px;
+}
+
+// Sidebar Content
+#sidebar {
+	float:            left;
+	width:            21.3%;
+	border-radius:    5px;
+	background-color: #fff;
+	padding-bottom:   .1em;
+	.widget_text > h2 {
+		margin-top:   0;
+		padding-left: .5em;
+		padding-top:  .5em;
+	}
+	.textwidget {
+		text-align: center;
+		h3 {
+			padding-left: .5em;
+			text-align:   left;
+			font-weight:  100;
+		}
+	}
+}
+
+// Footer
+footer {
+	clear: both;
+	width: 76.9%;
+}
+
+// Common Styles
+.group {
+	@include clearfix;
+}
+.clear {
+	clear: both;
+}
+.alignleft {
+	float:  left;
+	margin: 0 10px 10px 0;
+}
+.alignright {
+	float:  right;
+	margin: 0 0 10px 10px;
+}
+ul, ol {
+	margin:  1em 0;
+	padding: 0 0 0 40px;
+}
+dd {
+	margin: 0 0 0 40px;
+}
+nav ul, nav ol, .reset-list, .nav-list, #sidebar ul {
+	list-style:       none;
+	list-style-image: none;
+	margin:           0;
+	padding:          0;
+}
+.nav-list li {
+	float: left;
+}
+table {
+	border-collapse: collapse;
+	border-spacing:  0;
+}
+td {
+	vertical-align: top;
+}
+.post-edit-link {
+	float: right;
+}
+.two-column {
+	float:        left;
+	width:        45%;
+	margin-right: 5%;
+}
+.three-column {
+	float:        left;
+	width:        30%;
+	margin-right: 4.94623655914%; /* 46px/930px */
+	.last {
+		margin-right: 0;
+	}
+}
+.three-fourths {
+	float: left;
+	width: 75%;
+}
+.one-fourths {
+	float: left;
+	width: 25%;
+}
+
+// Misc Styles
+img {
+	border:                 0;
+	-ms-interpolation-mode: bicubic;
+	vertical-align:         middle;
+	max-width:              100%;
+	height:                 auto;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 0;
+}
+.ir {
+	font:        0/0 serif;
+	text-shadow: none;
+	color:       transparent;
+}
+.rounded-5 {
+	border-radius: 5px;
+}
+.rounded-10 {
+	border-radius: 10px;
+}
+.rounded-15 {
+	border-radius: 15px;
+}
+.rounded-20 {
+	border-radius: 20px;
+}
+.start-quote {
+	background: url('../../images/quote-left.png') -3px 7px no-repeat;
+	position:   relative;
+}
+.end-quote {
+	background: url('../../images/quote-right.png') bottom right no-repeat;
+	width:      25px;
+	height:     20px;
+	display:    block;
+	position:   absolute;
+	right:      0;
+	bottom:     0;
+}
+
+// Print Styles
+@media print {
+	body {
+		background:  transparent !important;
+		color:       black !important;
+		text-shadow: none !important;
+		filter:      none !important;
+		-ms-filter:  none !important;
+	}
+	a, a:visited {
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	.ir a:after, a[href^=javascript]:after {
+	content: "";
+}
+	pre, blockquote {
+		border:            1px solid #999;
+		page-break-inside: avoid;
+	}
+	thead {
+		display: table-header-group;
+	}
+	tr, img {
+		page-break-inside: avoid;
+	}
+	img {
+		max-width: 100% !important;
+	}
+	@page {
+		margin: .5cm;
+	}
+	p, h2, h3 {
+		orphans: 3;
+		widows:  3;
+	}
+	h2, h3 {
+		page-break-after: avoid;
+	}
+}
