@@ -1,4 +1,4 @@
-/*! WIMPgives 2014 - v0.1.0 - 2014-10-19
+/*! WIMPgives 2014 - v0.1.0 - 2014-10-23
  * http://gives.beawimp.org
  * Copyright (c) 2014;
  * Licensed GPLv2+
@@ -47,3 +47,13 @@
 		}
 	} );
 })( this, jQuery );
+
+
+// GA Tracking
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-47611761-5', 'auto');
+ga('send', 'pageview');
